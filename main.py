@@ -5,3 +5,7 @@ chosen_word = random.choice(word_list)
 
 user_choice = input("Make a guess: ")
 guess = user_choice.lower()
+
+for letter in chosen_word:
+    if letter == guess:
+        print("Right")
