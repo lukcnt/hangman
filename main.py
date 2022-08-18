@@ -22,7 +22,7 @@ while not end_of_game:
 
     if guess not in chosen_word:
         if guess in wrong_choices:
-            print(f"You've already guessed {guessed}.")
+            print(f"You've already guessed {guess}.")
         else:
             print(f"You guessed {guess}, that's not in the word. You lose a life.")
             wrong_choices.append(guess)
