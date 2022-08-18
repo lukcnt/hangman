@@ -10,6 +10,8 @@ for letter in range(len(chosen_word)):
 user_choice = input("Make a guess: ")
 guess = user_choice.lower()
 
+position = 0
 for letter in chosen_word:
+    position += 1
     if letter == guess:
-        print("Right")
+        display[position -1] = letter
