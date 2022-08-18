@@ -7,13 +7,23 @@ display = []
 for letter in range(len(chosen_word)):
     display.append("_")
 
-user_choice = input("Make a guess: ")
-guess = user_choice.lower()
+lives = 6
+end_of_game = False
+while not end_of_game:
+    user_choice = input("Make a guess: ")
+    guess = user_choice.lower()
 
-position = 0
-for letter in chosen_word:
-    position += 1
-    if letter == guess:
-        display[position -1] = letter
+    position = 0
+    for letter in chosen_word:
+        position += 1
+        if letter == guess:
+            display[position -1] = letter
 
-print(f"{' '.join(display)}")
+    print(f"{' '.join(display)}")
+
+    if "_" not in display:
+        end_of_game = True
+        print("You win!")
+    elif "_" in display and lives == 0:
+        end_of_game = True
+        print(f"You lose.\nThe word is: {chosen_word}.")
