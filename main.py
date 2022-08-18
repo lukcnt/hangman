@@ -1,7 +1,8 @@
 import random
 import hangman_art
+import hangman_words
 
-word_list = ["ardvark", "baboon", "camel"]
+word_list = hangman_words.word_list
 chosen_word = random.choice(word_list)
 
 display = []
