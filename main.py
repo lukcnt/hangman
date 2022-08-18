@@ -15,3 +15,5 @@ for letter in chosen_word:
     position += 1
     if letter == guess:
         display[position -1] = letter
+
+print(f"{' '.join(display)}")
