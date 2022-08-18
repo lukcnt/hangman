@@ -8,6 +8,7 @@ for letter in range(len(chosen_word)):
     display.append("_")
 
 lives = 6
+wrong_choices = []
 end_of_game = False
 while not end_of_game:
     user_choice = input("Make a guess: ")
@@ -18,6 +19,14 @@ while not end_of_game:
         position += 1
         if letter == guess:
             display[position -1] = letter
+
+    if guess not in chosen_word:
+        if guess in wrong_choices:
+            print(f"You've already guessed {guessed}.")
+        else:
+            print(f"You guessed {guess}, that's not in the word. You lose a life.")
+            wrong_choices.append(guess)
+            lives -= 1
 
     print(f"{' '.join(display)}")
 
