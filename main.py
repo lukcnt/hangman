@@ -1,4 +1,5 @@
 import random
+import hangman_art
 
 word_list = ["ardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
@@ -36,3 +37,5 @@ while not end_of_game:
     elif "_" in display and lives == 0:
         end_of_game = True
         print(f"You lose.\nThe word is: {chosen_word}.")
+
+    print(hangman_art.stages[lives])
